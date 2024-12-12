@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Consulta de Saldo</title>
+</head>
+<body>
+    <h1>Consulta de Saldo</h1>
+    {% if erro %}
+        <p style="color: red;">{{ erro }}</p>
+    {% endif %}
+    {% if conta %}
+        <p>Conta: {{ conta.numero }} - Saldo: {{ conta.saldo }}</p>
+    {% endif %}
+    <form method="POST">
+        {% csrf_token %}
+        <label>Número da Conta:</label><br>
+        <input type="text" name="numero" required><br><br>
+        <button type="submit">Consultar Saldo</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Encerrar Conta</title>
+</head>
+<body>
+    <h1>Encerrar Conta Bancária</h1>
+    {% if erro %}
+        <p style="color: red;">{{ erro }}</p>
+    {% endif %}
+    {% if mensagem %}
+        <p style="color: green;">{{ mensagem }}</p>
+    {% endif %}
+    <form method="POST">
+        {% csrf_token %}
+        <label>Número da Conta:</label><br>
+        <input type="text" name="numero" required><br><br
